@@ -6,8 +6,8 @@ This project combines a Strapi backend with a Docusaurus frontend to create a do
 
 ```
 /docusaurus with strapi cms
-├── strapi backend        # Strapi backend
-└── docusaurus frontend    # Docusaurus frontend
+├── strapi         # Strapi backend
+└── docusaurus     # Docusaurus frontend
 ```
 
 ## Getting Started
@@ -23,13 +23,18 @@ This project combines a Strapi backend with a Docusaurus frontend to create a do
 1. **Clone the Repository**
    ```bash
    git clone https://github.com/arjun-vegeta/docusaurus-with-strapi-cms.git
-   cd your docusaurus-with-strapi-cms
+   cd docusaurus-with-strapi-cms
    ```
 
 2. **Set Up Strapi**
    - Navigate to the Strapi directory:
      ```bash
-     cd strapi 
+     mkdir strapi
+     cd strapi
+     ```
+   - Initialize a new Strapi project:
+     ```bash
+     npx create-strapi-app@latest . --quickstart
      ```
    - Install dependencies:
      ```bash
@@ -44,7 +49,7 @@ This project combines a Strapi backend with a Docusaurus frontend to create a do
 3. **Set Up Docusaurus**
    - Open a new terminal window or tab, then navigate to the Docusaurus directory:
      ```bash
-     cd docusaurus
+     cd ../docusaurus
      ```
    - Install dependencies:
      ```bash
@@ -86,12 +91,9 @@ This setup allows the public to read the categories and documents.
 
 Set up a webhook to trigger updates in Docusaurus whenever a document or category is created, updated, or deleted. You can do this under:
 - **Settings** > **Webhooks** in the Strapi admin panel.
-Webhook Url - `http://localhost:3001/reload-docs`.
-
-### Additional Notes
+- **Webhook URL**: `http://localhost:3001/reload-docs`.
 
 - Ensure your database is correctly set up and connected in `config/database.js` (or `.env` for environment variables).
 - For any further customization, refer to the Strapi and Docusaurus documentation.
-
-
+```
 
